@@ -8,6 +8,11 @@ def home():
     return render_template('test.html')
 
 
+@app.route("/detail")
+def details():
+    return render_template('shop-details.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 
