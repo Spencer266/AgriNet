@@ -12,7 +12,7 @@ def home():
 def details():
     return render_template('shop-details.html')
 
-
+# new branch test
 if __name__ == '__main__':
     app.run(debug=True)
 
