@@ -258,3 +258,7 @@ a {
         display: none;
     }
 }
+
+.sign-up-text a {
+    color: #7FAD39;
+}
