@@ -48,6 +48,21 @@ def registration():
     return render_template('registration.html')
 
 
+@app.route("/dashboard")
+def farmerDashboard():
+    return render_template('dashboard.html')
+
+
+@app.route("/dashboard/profile")
+def farmer_dashboard_profile():
+    return render_template('profile.html')
+
+
+@app.route("/dashboard/basic-table")
+def farmer_dashboard_storage():
+    return render_template('basic-table.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 
