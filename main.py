@@ -63,6 +63,11 @@ def farmer_dashboard_storage():
     return render_template('basic-table.html')
 
 
+@app.route("/shop-search")
+def shop_search():
+    return render_template('shop-search.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 
