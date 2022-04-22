@@ -117,6 +117,7 @@
             <div class="row featured__filter">
                 {% for product in products %}
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <input style="display: none" id="productId" value="{{ product.ProductId }}"/>
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="{{ url_for('static', filename='/img/featured/feature-1.jpg') }}">
                             <ul class="featured__item__pic__hover">
