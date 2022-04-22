@@ -78,6 +78,11 @@ def add_product():
     return render_template('add-product.html')
 
 
+@app.route("/dashboard/edit-product")
+def edit_product():
+    return render_template('edit-product.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 

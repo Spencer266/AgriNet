@@ -15917,3 +15917,22 @@ html body .waves-notransition {
     width: 100%;
     max-width: 100%;
 }
+
+.product__row__tool__item {
+    box-sizing: border-box;
+    background-color: #7FAD39;
+    border-radius: 5px;
+    border: none;
+    display: inline-block;
+    padding: 0 10px;
+    color: white;
+    margin-bottom: 1rem;
+    border: 1px solid #7FAD39;
+}
+
+.product__row__tool__item:hover {
+    color: #7FAD39;
+    background-color: white;
+    border: 1px solid #7FAD39;
+    outline: none; !important;
+}
