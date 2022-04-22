@@ -262,3 +262,21 @@ a {
 .sign-up-text a {
     color: #7FAD39;
 }
+
+.input-account-type {
+    display: flex;
+    align-items: center;
+}
+
+.input-account-type input {
+    color: #7FAD39;
+    margin-right: 0.5rem;
+}
+
+.input-account-type span:first-child {
+    margin-right: 2rem;
+}
+
+.input-account-type input:last-child {
+    margin-left: 2rem;
+}

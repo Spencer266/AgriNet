@@ -3466,3 +3466,25 @@ ol {
 		font-size: 24px;
 	}
 }
+
+.login-account-type {
+	display: none;
+	text-align: left;
+	position: absolute;
+	bottom: 0;
+	background-color: white;
+	border: 1px solid #7FAD39;
+}
+
+.login-account-type a {
+	padding: 0 5px;
+}
+
+.header__top__right__auth:hover .login-account-type {
+	display: block;
+}
+
+.login-account-type a:hover {
+	background-color: #7FAD39;
+	color: white;
+}
