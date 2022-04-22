@@ -86,7 +86,7 @@
                                 {% if not user.is_authenticated %}
                                 <i class="fa fa-user"></i><span style="margin-left: 5px; font-size: 14px">Đăng nhập</span>
                                 <div class="login-account-type">
-                                    <a href="">Người bán</a>
+                                    <a href="{{url_for('seller_login')}}">Người bán</a>
                                     <a href="{{ url_for('login') }}">Khách hàng</a>
                                 </div>
                                 {% else %}

@@ -6,22 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 from AgriNet import db, CustomerAccounts, Products, SellerAccounts
 from AgriNet import login_manager
-# def role_required(role):
-#     def decorator(f):
-#         @wraps(f)
-#         def wrap(*args, **kwargs):
-#             if current_user.name == role:
-#                 return f(*args, **kwargs)
-#             else:
-#                 flash("You need to be an admin to view that page.")
-#                 return redirect(url_for('home'))
-#         return wrap
-#     return decorator
 
-
-# @login_manager.user_loader
-# def load_user(CustomerAccountId):
-#     return CustomerAccounts.query.get(int(CustomerAccountId))
 from AgriNet import load_user
 
 

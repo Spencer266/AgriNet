@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 from sqlalchemy.ext.automap import automap_base
 
-
 app = Flask(__name__, static_url_path='/AgriNet/static')
 
 app.config['SECRET_KEY'] = 'thisisasecretkey246810'
@@ -54,6 +53,8 @@ Category = Base.classes.category
 OrderDetail = Base.classes.orderdetail
 Orders = Base.classes.orders
 Products = Base.classes.products
+
+
 # CustomerAccounts = Base.classes.customeraccounts
 # SellerAccounts = Base.classes.selleraccounts
 # ShoppingCarts = Base.classes.shoppingcarts

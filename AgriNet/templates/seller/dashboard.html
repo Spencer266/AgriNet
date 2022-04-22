@@ -86,7 +86,8 @@
                         <li>
                             <a class="profile-pic" href="#">
                                 <img src="{{ url_for('static', filename='img/varun.jpg') }}" alt="user-img" width="36"
-                                    class="img-circle"><span class="text-white font-medium">Steave</span></a>
+                                    class="img-circle"><span class="text-white font-medium">{{user.UserName}}</span></a>
+                            <a style="display: inline-block" href="{{ url_for('seller_logout') }}" class="primary-btn">-></a>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
