@@ -6,6 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 from AgriNet import db, CustomerAccounts, Products, SellerAccounts
 from AgriNet import login_manager
+#
 # def role_required(role):
 #     def decorator(f):
 #         @wraps(f)
