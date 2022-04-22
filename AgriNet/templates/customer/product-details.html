@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
     <!-- Hero Section Begin -->
-    <section class="hero">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/send-message.css') }}">
+    <section class="hero hero-normal">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -10,7 +11,7 @@
                             <i class="fa fa-bars"></i>
                             <span>Hạng mục</span>
                         </div>
-                        <ul>
+                        <ul style="position: absolute; z-index: 1">
                             <li><a href="#">Gạo</a></li>
                             <li><a href="#">Rau củ</a></li>
                             <li><a href="#">Hoa quả</a></li>
@@ -120,7 +121,7 @@
                         <ul>
                             <li><b>Trong kho</b> <span>{{ product.QuantityInStock}}</span></li>
                             <li><b>Đơn vị</b> <span>{{ product.Unit }}</span></li>
-                            <li><b>Nhà bán</b> <a href="#">Tên nhà bán</a></li>
+                            <li><b>Nhà bán</b> <a href="{{ url_for('shop', shop_id=seller.SellerAccountId) }}">{{ seller.SellerFullName }}</a></li>
                             <li><b>Chia sẻ</b>
                                 <div class="share">
                                     <a href="#"><i class="fa fa-facebook"></i></a>

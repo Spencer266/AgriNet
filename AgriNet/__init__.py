@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 from sqlalchemy.ext.automap import automap_base
@@ -58,6 +58,16 @@ Products = Base.classes.products
 # SellerAccounts = Base.classes.selleraccounts
 # ShoppingCarts = Base.classes.shoppingcarts
 # Categories = db.Table('categories', db.metadata, autoload=True, autoload_with=db.engine)
+
+
+@login_manager.user_loader
+def load_user(UserId):
+    if UserId < 100:
+        print("customer runned")
+        return CustomerAccounts.query.get(int(UserId))
+    else:
+        print("seller runned")
+        return SellerAccounts.query.get(int(UserId))
 
 
 from AgriNet.customer import routes

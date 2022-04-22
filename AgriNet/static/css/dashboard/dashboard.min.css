@@ -2,6 +2,10 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800);
 @imporr 'static/css/fontawesome-all.min.css'
 
+    .logo-icon img {
+    width: 5rem;
+}
+
 .search-box .app-search .form-control {
     border-radius: 0px
 }

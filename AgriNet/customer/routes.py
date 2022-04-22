@@ -4,7 +4,7 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, cur
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 
-from AgriNet import db, CustomerAccounts, Products
+from AgriNet import db, CustomerAccounts, Products, SellerAccounts
 from AgriNet import login_manager
 # def role_required(role):
 #     def decorator(f):
@@ -19,9 +19,10 @@ from AgriNet import login_manager
 #     return decorator
 
 
-@login_manager.user_loader
-def load_user(CustomerAccountId):
-    return CustomerAccounts.query.get(int(CustomerAccountId))
+# @login_manager.user_loader
+# def load_user(CustomerAccountId):
+#     return CustomerAccounts.query.get(int(CustomerAccountId))
+from AgriNet import load_user
 
 
 @app.route('/')
@@ -37,14 +38,16 @@ def login():
 
         cust = db.session.query(CustomerAccounts).filter_by(UserName=username).first()
         if not cust:
+            print('ko co username')
             return redirect(url_for('login'))
 
         if not check_password_hash(cust.Password, password):
+            print('sai password')
             return redirect(url_for('login'))
 
         login_user(cust)
         return redirect(url_for('home'))
-    return render_template('/customer/login.html')
+    return render_template('/customer/login.html', user=current_user)
 
 
 @app.route('/customer/register', methods=['GET', 'POST'])
@@ -61,9 +64,7 @@ def register():
         if cust:
             flash("Tên người dùng đã được sử dụng")
             return redirect(url_for('register'))
-
         new_cust = CustomerAccounts(
-            CustomerAccountId=12,
             UserName=username,
             Password=generate_password_hash(request.form.get('pass')),
             CustomerFullName="Default Customer",
@@ -72,13 +73,14 @@ def register():
             AvatarUrl="https://www.google.com.vn/url?sa=i&url=https%3A%2F%2Fwww.studyphim.vn%2Fmovies%2Fmemoirs-of-a-geisha&psig=AOvVaw0HyWzdsZ9PK7aYfHanf9Az&ust=1650642844077000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCMjxqPzBpfcCFQAAAAAdAAAAABAJ"
         )
 
+
         db.session.add(new_cust)
         db.session.commit()
 
         login_user(new_cust)
 
         return redirect(url_for("home"))
-    return render_template('/customer/registration.html')
+    return render_template('/customer/registration.html', user=current_user)
 
 
 @app.route('/customer/home')
@@ -89,23 +91,25 @@ def home():
 
 @app.route('/customer/search-result/<search>')
 def search(search):
-    pass
+
+    return render_template('/customer/product-search.html')
 
 
 @app.route('/customer/productview/<product_id>')
 def product(product_id):
     product = db.session.query(Products).filter_by(ProductId=product_id).first()
-    return render_template('/customer/product-details.html', product=product)
+    seller = db.session.query(SellerAccounts).filter_by(SellerAccountId=product.SellerId).first()
+    return render_template('/customer/product-details.html', product=product, user=current_user, seller=seller)
 
 
 @app.route('/customer/cart')
 def cart():
-    return render_template('/customer/shopping-cart.html')
+    return render_template('/customer/shopping-cart.html', user=current_user)
 
 
 @app.route('/customer/checkout')
 def checkout():
-    return render_template('/customer/checkout.html')
+    return render_template('/customer/checkout.html', user=current_user)
 
 
 @app.route('/customer/logout')
