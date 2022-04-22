@@ -5,14 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ample Admin Lite Template by WrapPixel</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard/fontawesome-all.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard/themify-icons.css') }}">
     <!-- Custom CSS -->
    <link href="{{ url_for('static', filename='css/dashboard/dashboard.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -52,6 +51,7 @@
                             <img style="margin-left: 15px" src="{{ url_for('static', filename='img/logo.png') }}" alt="homepage" />
                         </b>
                         <!--End Logo icon -->
+
                     </a>
                     <!-- ============================================================== -->
                     <!-- End Logo -->
@@ -173,12 +173,10 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Kho</h4>
+                        <h4 class="page-title">Thêm sản phẩm</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                        <div class="d-md-flex">
-                           
-                        </div>
+                       
                     </div>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -193,58 +191,90 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
+                <!-- Row -->
                 <div class="row">
-                    <div class="col-sm-12">
-                        <a style="text-decoration: none; display: inline-block" class="add__product" href="/dashboard/add-product">
-                            Thêm sản phẩm
-                        </a>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="white-box">
-                            <div class="table-responsive">
-                                <table class="table text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="border-top-0">#</th>
-                                            <th class="border-top-0">Tên sản phẩm</th>
-                                            <th class="border-top-0">Loại sản phẩm</th>
-                                            <th class="border-top-0">Số lượng</th>
-                                            <th class="border-top-0">Đơn vị</th>
-                                            <th class="border-top-0">Ngày đăng bán</th>
-                                            <th class="border-top-0">Đơn giá</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Dưa hấu</td>
-                                            <td>30</td>
-                                            <td>12/02/2020</td>
-                                            <td>10.000đ</td>
-                                            <td>kg</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Dưa hấu</td>
-                                            <td>30</td>
-                                            <td>12/02/2020</td>
-                                            <td>10.000đ</td>
-                                            <td>kg</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Dưa hấu</td>
-                                            <td>30</td>
-                                            <td>12/02/2020</td>
-                                            <td>10.000đ</td>
-                                            <td>kg</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <form class="form-horizontal form-material" enctype="multipart/form-data">
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Tên sản phẩm</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" placeholder="Nhập tên sản phẩm"
+                                                class="form-control p-0 border-0"> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="category-elect" class="col-md-12 p-0">Chọn loại sản phẩm</label>
+                                        <select id="category-elect">
+                                            <option value="all">Tất cả</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="product-price" class="col-md-12 p-0">Đơn giá</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="number" placeholder="Nhập đơn giá" min="1000"
+                                                class="form-control p-0 border-0" name="product-price"
+                                                id="product-price">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="product-quantity" class="col-md-12 p-0">Số lượng</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="number" placeholder="Nhập số lượng" min="1"
+                                                class="form-control p-0 border-0" name="product-quantity"
+                                                id="product-quantity">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="unit" class="col-md-12 p-0">Chọn đơn vị</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" placeholder="Nhập đơn vị"
+                                                class="form-control p-0 border-0" name="unit"
+                                                id="unit">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="product-description" class="col-md-12 p-0">Mô tả</label>
+                                        <div class="col-md-12 p-0">
+                                            <textarea name="product-description" id="product-description" style="width: 100%" rows="5" placeholder="Nhập mô tả"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="product-origin" class="col-md-12 p-0">Xuất xứ</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="email" placeholder="Nhập xuất xứ"
+                                                class="form-control p-0 border-0" name="product-origin"
+                                                id="product-origin">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Hình ảnh sản phẩm</label>
+                                        <div class="col-md-12 p-0">
+                                            <input type="file" placeholder="Thêm hình ảnh"
+                                                class="form-control p-0 border-0">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="product-certificate" class="col-md-12 p-0">Chứng nhận sản phẩm</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="email" placeholder="Nhập chứng nhận"
+                                                class="form-control p-0 border-0" name="product-certificate"
+                                                id="product-certificate">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-success">Thêm</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+                    <!-- Column -->
                 </div>
+                <!-- Row -->
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
@@ -260,6 +290,14 @@
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <!-- <footer class="footer text-center"> 2021 © Ample Admin brought to you by <a
+                    href="https://www.wrappixel.com/">wrappixel.com</a>
+            </footer> -->
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
@@ -274,7 +312,7 @@
     <script src="{{ url_for('static', filename='js/dashboard/jquery.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{ url_for('static', filename='js/dashboard/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/dashboard/app-style-switcher.js') }}/"></script>
+    <script src="{{ url_for('static', filename='js/dashboard/app-style-switcher.js') }}"></script>
     <!--Wave Effects -->
     <script src="{{ url_for('static', filename='js/dashboard/waves.js') }}"></script>
     <!--Menu sidebar -->

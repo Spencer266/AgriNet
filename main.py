@@ -68,6 +68,16 @@ def shop_search():
     return render_template('shop-search.html')
 
 
+@app.route("/shop-information")
+def shop_information():
+    return render_template('shop-information.html')
+
+
+@app.route("/dashboard/add-product")
+def add_product():
+    return render_template('add-product.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 

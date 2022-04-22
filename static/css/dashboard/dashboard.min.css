@@ -15887,3 +15887,33 @@ html body .waves-notransition {
 .profile__job {
     border-bottom: none;
 }
+
+.add__product {
+    text-decoration: none;
+    box-sizing: border-box;
+    background-color: #7FAD39;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 15px;
+    color: white;
+    margin-bottom: 1rem;
+    border: 1px solid #7FAD39;
+    outline: none; !important;
+}
+
+.add__product:hover {
+    color: #7FAD39;
+    background-color: white;
+    border: 1px solid #7FAD39;
+    outline: none; !important;
+}
+
+.add__product:active{
+    outline: none; !important;
+}
+
+.product-description {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+}
