@@ -26,6 +26,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
 </head>
 <body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
     <!-- Humberger Begin -->
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
@@ -37,7 +42,7 @@
                 <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                 <li><a href="./shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
             </ul>
-            <div class="header__cart__price">Tổng: <span>150000đ</span></div>
+            <div class="header__cart__price">item: <span>$150.00</span></div>
         </div>
         <div class="humberger__menu__widget">
             <div class="header__top__right__auth">
@@ -47,14 +52,7 @@
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
                 <li class="active"><a href="./index.html">Trang chủ</a></li>
-                <li><a href="./shop-grid.html">Shop</a></li>
-                <li><a href="#">Pages</a>
-                    <ul class="header__menu__dropdown">
-                        <li><a href="/shop-details">Shop Details</a></li>
-                        <li><a href="/shoping-cart">Shoping Cart</a></li>
-                        <li><a href="/checkout">Check Out</a></li>
-                    </ul>
-                </li>
+                <li><a href="/shop-grid.html">Shop</a></li>
                 <li><a href="/contact">Liên hệ</a></li>
             </ul>
         </nav>
@@ -64,12 +62,6 @@
             <a href="#"><i class="fa fa-twitter"></i></a>
             <a href="#"><i class="fa fa-linkedin"></i></a>
             <a href="#"><i class="fa fa-pinterest-p"></i></a>
-        </div>
-        <div class="humberger__menu__contact">
-            <ul>
-                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                <li>Free Shipping for all Order of $99</li>
-            </ul>
         </div>
     </div>
     <!-- Humberger End -->
@@ -90,7 +82,12 @@
                                 <a href="#"><i class="fa fa-pinterest-p"></i></a>
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="/login"><i class="fa fa-user"></i>Đăng nhập</a>
+                                <!--<a href="/login"><i class="fa fa-user"></i>Đăng nhập</a>-->
+                                <i class="fa fa-user"></i><span style="margin-left: 5px; font-size: 14px">Đăng nhập</span>
+                                <div class="login-account-type">
+                                    <a href="">Người bán</a>
+                                    <a href="{{ url_for('login') }}">Khách hàng</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -109,13 +106,6 @@
                         <ul>
                             <li id="header__menu__home"><a href="/">Trang chủ</a></li>
                             <li id="header__menu__shop"><a href="/shop-grid">Cửa hàng</a></li>
-<!--                            <li id="header__menu__pages"><a href="#">Pages</a>-->
-<!--                                <ul class="header__menu__dropdown">-->
-<!--                                    <li><a href="/shop-details">Shop Details</a></li>-->
-<!--                                    <li><a href="/shopping-cart">Shopping Cart</a></li>-->
-<!--                                    <li><a href="/checkout">Check Out</a></li>-->
-<!--                                </ul>-->
-<!--                            </li>-->
                             <li id="header__menu__contact"><a href="/contact">Liên hệ</a></li>
                         </ul>
                     </nav>
@@ -123,10 +113,10 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-<!--                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>-->
+                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                             <li><a href="/shopping-cart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
-                        <div class="header__cart__price">Giỏ: <span>150000đ</span></div>
+                        <div class="header__cart__price">item: <span>$150.00</span></div>
                     </div>
                 </div>
             </div>
@@ -148,38 +138,37 @@
                             <a href="/"><img src="{{ url_for('static', filename='/img/logo.png') }}" alt=""></a>
                         </div>
                         <ul>
-                            <li>Địa chỉ: Quận Nam Từ Liêm, Hà Nội</li>
-                            <li>Phone: 037004168</li>
-                            <li>Email: j4fun@gmail.com</li>
+                            <li>Trụ sở: 144 Xuân Thủy - Cầu Giấy</li>
+                            <li>Số điện thoại: 0123.456.789</li>
+                            <li>Email: j4fun@vnu.edu.vn</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
                     <div class="footer__widget">
-                        <h6>Liên kết trang</h6>
+                        <h6>Links</h6>
                         <ul>
                             <li><a href="#">Về chúng tôi</a></li>
-                            <li><a href="#">Về shop của chúng tôi</a></li>
-                            <li><a href="#">Mua sắm an toàn</a></li>
-                            <li><a href="#">Thông tin giao hàng</a></li>
-                            <li><a href="#">Bảo mật</a></li>
+                            <li><a href="#">Mua hàng an toàn</a></li>
+                            <li><a href="#">Thông tin vận chuyển</a></li>
+                            <li><a href="#">Pháp lý</a></li>
+                            <li><a href="#">Our Sitemap</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#">Chúng tôi là ai?</a></li>
-                            <li><a href="#">Dịch vụ</a></li>
+                            <li><a href="#">Chúng tôi là ai</a></li>
+                            <li><a href="#">Dịch vụ của chúng tối</a></li>
                             <li><a href="#">Dự án</a></li>
                             <li><a href="#">Liên hệ</a></li>
-                            <li><a href="#">Cải tiến</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <div class="footer__widget">
-                        <h6>Nhận tin tức từ chúng tôi</h6>
-                        <p>Nhận email thông báo</p>
+                        <h6>Nhận bản tin của J4FUN</h6>
+                        <p>Nhận Email về các cập nhập hoặc nhưng ưu đãi đặc biệt.</p>
                         <form action="#">
-                            <input type="text" placeholder="Vui lòng nhập email của bạn">
-                            <button type="submit" class="site-btn">Nhận email</button>
+                            <input type="text" placeholder="Nhập email">
+                            <button type="submit" class="site-btn">Đăng ký</button>
                         </form>
                         <div class="footer__widget__social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
@@ -187,16 +176,6 @@
                             <a href="#"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-pinterest"></i></a>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer__copyright">
-                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
-                        <div class="footer__copyright__payment"><img src="{{ url_for('static', filename='/img/payment-item.png') }}" alt=""></div>
                     </div>
                 </div>
             </div>

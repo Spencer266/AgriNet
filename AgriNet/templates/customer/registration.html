@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab - youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Responsive Registration Form | CodingLab </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/registration.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<div class="container">
+    <div class="title">Đăng ký</div>
+    <div class="content">
+        <form action="#">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Tên tài khoản</span>
+                    <input type="text" placeholder="Nhập tên tài khoản" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="email" placeholder="Nhập email" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Số điện thoại</span>
+                    <input type="text" placeholder="Nhập số điện thoại" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Mật khẩu</span>
+                    <input type="password" placeholder="Nhập mật khẩu" required>
+                </div>
+            </div>
+            <div class="gender-details">
+                <input type="radio" name="gender" id="dot-1">
+                <input type="radio" name="gender" id="dot-2">
+                <input type="radio" name="gender" id="dot-3">
+                <span class="gender-title">Giới tính</span>
+                <div class="category">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span class="gender">Nam</span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span class="gender">Nữ</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="job">
+                <input type="radio" name="job" id="job-1">
+                <input type="radio" name="job" id="job-2">
+                <span class="job-title">Bạn là</span>
+                <div class="category">
+                    <label for="job-1">
+                        <span class="dot one"></span>
+                        <span class="gender">Người bán</span>
+                    </label>
+                    <label for="job-2">
+                        <span class="dot two"></span>
+                        <span class="gender">Khách hàng</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="button">
+                <input type="submit" value="Đăng ký">
+            </div>
+            <div class="login-text-nav">Bạn đã có tài khoản ? <a href="/login">Đăng nhập</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+
+</html>

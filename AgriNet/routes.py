@@ -20,7 +20,7 @@ def role_required(role):
 
 @app.route("/")
 def home():
-    return render_template('index.html')
+    return render_template('test.html')
 
 
 @app.route("/detail")

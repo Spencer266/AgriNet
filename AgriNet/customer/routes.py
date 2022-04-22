@@ -24,8 +24,23 @@ def load_user(CustomerAccountId):
     return CustomerAccounts.query.get(int(CustomerAccountId))
 
 
-@app.route('/customer/login')
+@app.route('/')
+def home1():
+    return redirect(url_for('home'))
+
+
+@app.route('/customer/login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('pass')
+
+        cust = db.session.query(CustomerAccounts).filter_by(UserName=username).first()
+        if not cust:
+            return redirect('login')
+
+        if check_password_hash(password) != cust.Password:
+
     return render_template('/customer/login.html')
 
 
