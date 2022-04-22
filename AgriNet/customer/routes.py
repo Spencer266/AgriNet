@@ -37,10 +37,13 @@ def login():
 
         cust = db.session.query(CustomerAccounts).filter_by(UserName=username).first()
         if not cust:
-            return redirect('login')
+            return redirect(url_for('login'))
 
-        if check_password_hash(password) != cust.Password:
+        if not check_password_hash(cust.Password, password):
+            return redirect(url_for('login'))
 
+        login_user(cust)
+        return redirect(url_for('home'))
     return render_template('/customer/login.html')
 
 
@@ -81,7 +84,7 @@ def register():
 @app.route('/customer/home')
 def home():
     sample = db.session.query(Products).all()
-    return render_template('/customer/index.html', products=sample)
+    return render_template('/customer/index.html', products=sample, user=current_user)
 
 
 @app.route('/customer/search-result/<search>')
@@ -103,3 +106,9 @@ def cart():
 @app.route('/customer/checkout')
 def checkout():
     return render_template('/customer/checkout.html')
+
+
+@app.route('/customer/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('home'))

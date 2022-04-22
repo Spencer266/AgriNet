@@ -83,11 +83,16 @@
                             </div>
                             <div class="header__top__right__auth">
                                 <!--<a href="/login"><i class="fa fa-user"></i>Đăng nhập</a>-->
+                                {% if not user.is_authenticated %}
                                 <i class="fa fa-user"></i><span style="margin-left: 5px; font-size: 14px">Đăng nhập</span>
                                 <div class="login-account-type">
                                     <a href="">Người bán</a>
                                     <a href="{{ url_for('login') }}">Khách hàng</a>
                                 </div>
+                                {% else %}
+                                <i class="fa fa-user"></i><span style="margin-left: 5px; font-size: 14px"> {{user.UserName}}</span>
+                                <a style="display: inline-block" href="{{ url_for('logout') }}" class="primary-btn">-></a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
