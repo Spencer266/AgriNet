@@ -103,3 +103,4 @@ def cart():
 @app.route('/customer/checkout')
 def checkout():
     return render_template('/customer/checkout.html')
+

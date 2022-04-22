@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <!-- Hero Section Begin -->
-<section class="hero">
+<section class="hero hero-normal">
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
@@ -59,7 +59,7 @@ Inspired by https://dribbble.com/supahfunk
          <a href="#" title="End Chat">&#10005;</a>
 
          </span></div>
-            <div class="button">...</div>
+            <div id="btn-close-message" style="margin-right: 12px; font-size: 16px" class="button">Close</div>
         </div>
         <div class="agent-face">
             <div class="half">
@@ -148,7 +148,7 @@ Inspired by https://dribbble.com/supahfunk
                         <br>
                         <br>
                         <a href="#" class="primary-btn">Thêm vào giỏ</a>
-                        <a href="#" class="primary-btn">Thương lượng</a>
+                        <a href="#" id="call-message-button" class="primary-btn">Thương lượng</a>
                         <!--                        <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>-->
                         <ul>
                             <li><b>Trong kho</b> <span>{{ product.QuantityInStock}}</span></li>
@@ -328,5 +328,20 @@ Inspired by https://dribbble.com/supahfunk
             </div>
         </div>
     </section>
+    <script>
+        let callMessageButton = document.getElementById("call-message-button");
+        callMessageButton.addEventListener('click', function() {
+           let messageDialog = document.querySelector(".avenue-messenger");
+           messageDialog.style.display = "block";
+           messageDialog.style.visibility = "visible";
+        })
+
+        let closeMessageButton = document.getElementById("btn-close-message");
+        closeMessageButton.addEventListener('click', function (){
+             let messageDialog = document.querySelector(".avenue-messenger");
+             messageDialog.style.display = "none";
+           messageDialog.style.visibility = "hidden";
+        })
+    </script>
     <!-- Related Product Section End -->
     {% endblock content %}
