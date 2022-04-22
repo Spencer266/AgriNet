@@ -39,7 +39,7 @@ def login():
         if not cust:
             return redirect('login')
 
-        if check_password_hash(password) != cust.Password:
+        # if check_password_hash(password) != cust.Password:
 
     return render_template('/customer/login.html')
 

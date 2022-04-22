@@ -26,3 +26,8 @@ def home():
 @app.route("/detail")
 def details():
     return render_template('product-details.html')
+
+
+@app.route("/price")
+def price():
+    return render_template('price-analytic.html')
