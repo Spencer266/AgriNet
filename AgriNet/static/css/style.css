@@ -3467,11 +3467,15 @@ ol {
 	}
 }
 
+.header__top__right__auth {
+	cursor: pointer;
+}
+
 .login-account-type {
 	display: none;
 	text-align: left;
 	position: absolute;
-	bottom: 0;
+	z-index: 1;
 	background-color: white;
 	border: 1px solid #7FAD39;
 }
@@ -3480,11 +3484,25 @@ ol {
 	padding: 0 5px;
 }
 
-.header__top__right__auth:hover .login-account-type {
-	display: block;
-}
-
 .login-account-type a:hover {
 	background-color: #7FAD39;
 	color: white;
+}
+
+.site-btn:hover {
+	background-color: white;
+	color: #7FAD39;
+	border: 1px solid #7FAD39;
+}
+
+.primary-btn:hover {
+	background-color: white;
+	color: #7FAD39;
+	border: 1px solid #7FAD39
+}
+
+.button-hover {
+	background-color: white;
+	color: #7FAD39;
+	border: 1px solid #7FAD39;
 }

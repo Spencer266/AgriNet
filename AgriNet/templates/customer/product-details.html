@@ -52,6 +52,35 @@
     </section>
     <!-- Hero Section End -->
 
+    <section class="avenue-messenger">
+        <div class="menu">
+            <div class="items"><span>
+         <a href="#" title="Minimize">&mdash;</a><br>
+         <a href="#" title="End Chat">&#10005;</a>
+
+         </span></div>
+            <div id="btn-close-message" style="margin-right: 12px; font-size: 16px" class="button">Close</div>
+        </div>
+        <div class="agent-face">
+            <div class="half">
+                <img class="agent circle" src="http://askavenue.com/img/17.jpg" alt="Jesse Tino"></div>
+        </div>
+        <div class="chat">
+            <div class="chat-title">
+                <h1>Jesse Tino</h1>
+                <h2>RE/MAX</h2>
+            </div>
+            <div class="messages">
+                <div class="messages-content"></div>
+            </div>
+            <div class="message-box">
+                <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
+                <button type="submit" class="message-submit">Send</button>
+            </div>
+        </div>
+        </div>
+    </section>
+
     <!-- Breadcrumb Section Begin -->
 <!--    <section class="breadcrumb-section set-bg" data-setbg="{{ url_for('static', filename='/img/breadcrumb.jpg') }}">-->
 <!--        <div class="container">-->
@@ -116,7 +145,7 @@
                         <br>
                         <br>
                         <a href="#" class="primary-btn">Thêm vào giỏ</a>
-                        <a href="#" class="primary-btn">Thương lượng</a>
+                        <a href="#" id="call-message-button" class="primary-btn">Thương lượng</a>
 <!--                        <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>-->
                         <ul>
                             <li><b>Trong kho</b> <span>{{ product.QuantityInStock}}</span></li>
@@ -293,4 +322,24 @@
         </div>
     </section>
     <!-- Related Product Section End -->
+    <script>
+        let callMessageButton = document.getElementById("call-message-button");
+        callMessageButton.addEventListener('click', function() {
+           let messageDialog = document.querySelector(".avenue-messenger");
+           messageDialog.style.display = "block";
+           messageDialog.style.visibility = "visible";
+        })
+
+        let closeMessageButton = document.getElementById("btn-close-message");
+        closeMessageButton.addEventListener('click', function (){
+             let messageDialog = document.querySelector(".avenue-messenger");
+             messageDialog.style.display = "none";
+           messageDialog.style.visibility = "hidden";
+        })
+    </script>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/send-message.js') }}"></script>
 {% endblock content %}

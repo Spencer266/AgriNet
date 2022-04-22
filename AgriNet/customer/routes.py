@@ -89,6 +89,13 @@ def home():
     return render_template('/customer/index.html', products=sample, user=current_user)
 
 
+@app.route('/customer/shop/<shop_id>')
+def shop(shop_id):
+    shop = db.session.query(SellerAccounts).filter_by(SellerAccountId=shop_id).first()
+    products = db.session.query(Products).filter_by(SellerId=shop_id).all()
+    return render_template('/customer/shop-grid.html', products=products, user=current_user, seller=shop)
+
+
 @app.route('/customer/search-result/<search>')
 def search(search):
 
