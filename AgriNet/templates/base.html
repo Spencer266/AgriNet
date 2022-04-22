@@ -81,9 +81,9 @@
                                 <a href="#"><i class="fa fa-linkedin"></i></a>
                                 <a href="#"><i class="fa fa-pinterest-p"></i></a>
                             </div>
-                            <div class="header__top__right__auth">
+                            <div id="login-field" class="header__top__right__auth">
                                 <!--<a href="/login"><i class="fa fa-user"></i>Đăng nhập</a>-->
-                                <i class="fa fa-user"></i><span style="margin-left: 5px; font-size: 14px">Đăng nhập</span>
+                                <i id="login-button" class="fa fa-user"></i><span style="margin-left: 5px; font-size: 14px">Đăng nhập</span>
                                 <div class="login-account-type">
                                     <a href="">Người bán</a>
                                     <a href="{{ url_for('login') }}">Khách hàng</a>
@@ -191,5 +191,14 @@
     <script src="{{ url_for('static', filename='js/mixitup.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        let loginButton = document.getElementById("login-field");
+        loginButton.addEventListener('click', function(){
+            let loginAccountType = document.querySelector(".login-account-type");
+            if (loginAccountType.style.display != "block")
+                loginAccountType.style.display = "block";
+            else loginAccountType.style.display = "none"
+        });
+    </script>
 </body>
 </html>
