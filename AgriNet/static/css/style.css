@@ -33,7 +33,7 @@
 html,
 body {
 	height: 100%;
-	font-family: "Cairo", sans-serif;
+	font-family: "Roboto", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 }
@@ -47,7 +47,7 @@ h6 {
 	margin: 0;
 	color: #111111;
 	font-weight: 400;
-	font-family: "Cairo", sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 
 h1 {
@@ -3465,4 +3465,26 @@ ol {
 	.blog__details__hero__text h2 {
 		font-size: 24px;
 	}
+}
+
+.login-account-type {
+	display: none;
+	text-align: left;
+	position: absolute;
+	bottom: 0;
+	background-color: white;
+	border: 1px solid #7FAD39;
+}
+
+.login-account-type a {
+	padding: 0 5px;
+}
+
+.header__top__right__auth:hover .login-account-type {
+	display: block;
+}
+
+.login-account-type a:hover {
+	background-color: #7FAD39;
+	color: white;
 }
